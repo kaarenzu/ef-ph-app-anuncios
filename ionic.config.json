@@ -1,0 +1,7 @@
+{
+  "name": "ef-ph-app-anuncios",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
