@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-item *ngFor="let a of anuncios">
+    <ion-img [src]="'data:image/jpeg;base64,'+ a.fotografia" width="10" height="20" />
+    <ion-label>
+      {{a.titulo}}
+    </ion-label>
+    <br />
+    <ion-label>
+      {{fecha | date:'yyyy-MM-dd':'es-CL'}}
+    </ion-label>
+    <span #spanId style="display:none;"></span>
+    <ion-button (click)="onClick()" slot="end" fill="clear">
+      <ion-icon name="trash-outline" slot="end" color="blue"></ion-icon>
+      {{a.id}}
+    </ion-button>
+  </ion-item>
+</ion-list>

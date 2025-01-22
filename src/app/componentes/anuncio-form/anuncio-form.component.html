@@ -1,0 +1,34 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Titulo</ion-card-title>
+
+    <ion-item lines="none">
+      <ion-input required="required" placeholder="Ingrese titulo de publicación" minlength="5"
+        errorText="el titulo debe tener minimo 5 caracteres" [(ngModel)]="tituloStr" type="string"
+        #tituloInput="ngModel">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input required="required" label="Descripcion" labelPlacement="stacked" placeholder="ingrese descripcion"
+        minlength="20" errorText="La descripcion debe tener minimo 20 caracteres" [(ngModel)]="descripcionStr"
+        type="string" #descripcionInput="ngModel">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!--<ion-button (click)="tomarFotoAviso()">Subir Foto</ion-button> -->
+      <ion-button (click)="tomarFotoAviso()">Subir Foto</ion-button>
+      <div *ngIf="fotoAnuncioStr">
+        <ion-img [src]="'data:image/jpeg;base64,' + fotoAnuncioStr" />
+      </div>
+    </ion-item>
+
+    <!-- Con el evento click, necesito enviar esta info emitida a traves de un evento click hacia el componente padre -->
+    <ion-item lines="none">
+      <ion-button (click)="crearAnuncio()" [disabled]="!tituloInput.valid || !descripcionInput.valid" slot="start"
+        fill="outline">
+        Agregar Aviso</ion-button>
+    </ion-item>
+  </ion-card-header>
+</ion-card>
