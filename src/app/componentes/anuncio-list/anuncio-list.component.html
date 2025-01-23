@@ -9,9 +9,25 @@
       {{fecha | date:'yyyy-MM-dd':'es-CL'}}
     </ion-label>
     <span #spanId style="display:none;"></span>
-    <ion-button (click)="onClick()" slot="end" fill="clear">
+    <ion-button (click)="setModalPriceOpen(true)" slot="end" fill="clear">
       <ion-icon name="trash-outline" slot="end" color="blue"></ion-icon>
-      {{a.id}}
     </ion-button>
   </ion-item>
 </ion-list>
+<ion-modal [isOpen]="isModalPriceOpen">
+  <ng-template>
+    <ion-title>
+      Precio
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="setModalPriceOpen(false)">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-header>
+      <ion-content>
+        Desea eliminar este elemento?
+      </ion-content>
+    </ion-header>
+  </ng-template>
+</ion-modal>
