@@ -29,9 +29,7 @@ export class HomePage {
     addIcons({ addCircleOutline, settingsOutline });
   }
 
-
   async ngOnInit() {
-    console.log("Hola")
     await this._actualizar()
   }
 

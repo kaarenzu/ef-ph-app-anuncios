@@ -35,10 +35,7 @@ export class AnuncioFormComponent implements OnInit {
       fecha: this.fechaCreacionAnuncioStr
 
     };
-    console.log("anuncios desde crearAnuncio", nuevoAnuncio)
     this.enviarDatos.emit(nuevoAnuncio)
-
-    console.log("mostrar fecha", this.fechaCreacionAnuncioStr)
   }
 
   async tomarFotoAviso() {

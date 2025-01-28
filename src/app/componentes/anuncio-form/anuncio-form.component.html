@@ -1,7 +1,6 @@
 <ion-card>
   <ion-card-header>
     <ion-card-title>Titulo</ion-card-title>
-
     <ion-item lines="none">
       <ion-input required="required" placeholder="Ingrese titulo de publicación" minlength="5"
         errorText="el titulo debe tener minimo 5 caracteres" [(ngModel)]="tituloStr" type="string"
@@ -17,7 +16,6 @@
     </ion-item>
 
     <ion-item>
-      <!--<ion-button (click)="tomarFotoAviso()">Subir Foto</ion-button> -->
       <ion-button (click)="tomarFotoAviso()">Subir Foto</ion-button>
       <div *ngIf="fotoAnuncioStr">
         <ion-img [src]="'data:image/jpeg;base64,' + fotoAnuncioStr" />
